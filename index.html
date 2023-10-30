@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html class="scroll-smooth" lang="pl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,17 +16,26 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="main.js" defer></script>
   </head>
   <body class="flex justify-center bg-offWhite">
-    <div class="wrapper max-w-[500px] mx-4 xl:max-w-[1200px]">
-      <nav class="flex w-full justify-between mb-12 xl:mb-14 mt-8 xl:mt-20">
-        <div class="logo">
+    <div class="wrapper mx-4 max-w-[500px] md:max-w-[800px] xl:max-w-[1200px]">
+      <nav
+        class="sticky top-0 bg-white flex w-full justify-between mt-6 mb-8 pt-4 pb-4 md:mt-10 md:mb-6 md:pt-10 md:pb-7"
+      >
+        <a href="#" class="logo">
           <img src="images/logo.svg" alt="" />
-        </div>
-        <button class="hamburger xl:hidden">
-          <img src="images/icon-menu.svg" alt="" />
+        </a>
+        <button class="hamburger relative z-10 md:hidden">
+          <img class="menu-img" src="images/icon-menu.svg" alt="" />
+          <img
+            class="animate-spinOnce close-img hidden"
+            src="images/icon-menu-close.svg"
+            alt=""
+          />
         </button>
-        <div class="nav-items hidden xl:flex items-center text-darkGrayishBlue">
+
+        <div class="nav-items hidden md:flex items-center text-darkGrayishBlue">
           <ul class="flex space-x-10">
             <li class="hover:text-softRed"><a href="#">Home</a></li>
             <li class="hover:text-softRed"><a href="#">New</a></li>
@@ -35,22 +44,39 @@
             <li class="hover:text-softRed"><a href="#">Categories</a></li>
           </ul>
         </div>
+
+        <div
+          class="nav-items--mobile hidden fixed shadow md:hidden inset-0 bg-[rgba(0,0,0,0.5)]"
+        >
+          <div
+            class="nav-container animate-navAnimation fixed bg-white top-0 bottom-0 left-1/3 right-0 md:hidden"
+          >
+            <ul class="absolute top-[20%] flex flex-col pl-8 space-y-6 text-xl">
+              <li class="hover:text-softRed"><a href="#">Home</a></li>
+              <li class="hover:text-softRed"><a href="#">New</a></li>
+              <li class="hover:text-softRed"><a href="#">Popular</a></li>
+              <li class="hover:text-softRed"><a href="#">Trending</a></li>
+              <li class="hover:text-softRed"><a href="#">Categories</a></li>
+            </ul>
+          </div>
+        </div>
       </nav>
-      <main class="flex flex-col xl:flex-row gap-6">
-        <div class="flex flex-col xl:w-2/3 xl:gap-6">
+
+      <main class="flex flex-col md:flex-row gap-6">
+        <div class="flex flex-col md:justify-between md:w-2/3 md:gap-6">
           <img
             class="xl:hidden"
             src="images/image-web-3-mobile.jpg"
             alt="colorful figures"
           />
           <img
-            class="hidden xl:block xl:h-[60%]"
+            class="hidden xl:block"
             src="images/image-web-3-desktop.jpg"
             alt="colorful figures"
           />
-          <div class="flex flex-col xl:flex-row xl:h-[40%]">
+          <div class="flex flex-col xl:flex-row">
             <div
-              class="my-6 xl:my-0 xl:w-1/2 text-5xl xl:text-6xl font-extrabold pr-4"
+              class="my-6 md:mt-0 xl:my-0 xl:w-1/2 text-5xl xl:text-6xl font-extrabold pr-4"
             >
               <p>The Bright Future of Web 3.0?</p>
             </div>
@@ -61,7 +87,7 @@
                 But is it really fulfilling its promise?
               </p>
               <a
-                class="mt-6 mb-8 xl:my-0 w-fit px-8 py-3 text-sm text-offWhite tracking-[0.2rem] uppercase bg-softRed hover:bg-veryDarkBlue"
+                class="mt-6 mb-8 md:mb-0 xl:mt-0 w-fit px-8 py-3 text-sm text-offWhite tracking-[0.2rem] uppercase bg-softRed hover:bg-veryDarkBlue"
                 href=""
               >
                 Read more
@@ -70,7 +96,7 @@
           </div>
         </div>
 
-        <div class="px-6 py-8 xl:w-1/3 bg-veryDarkBlue text-offWhite">
+        <div class="px-6 py-8 md:w-1/3 bg-veryDarkBlue text-offWhite">
           <p class="text-4xl font-bold text-SoftOrange">New</p>
           <div
             class="mt-8 pb-8 space-y-2 border-b-[1px] border-darkGrayishBlue"
@@ -105,14 +131,16 @@
         </div>
       </main>
 
-      <div class="mb-20 mt-16 xl:mt-24 flex flex-col xl:flex-row gap-10">
-        <div class="flex gap-6">
+      <div
+        class="mb-20 mt-16 md:mt-24 flex flex-col md:flex-row md:flex-wrap md:justify-between xl:flex-nowrap gap-10"
+      >
+        <div class="flex gap-6 md:w-[45%]">
           <img
             class="w-1/3"
             src="images/image-retro-pcs.jpg"
             alt="retro computer"
           />
-          <div class="flex flex-col space-y-5">
+          <div class="flex flex-col justify-between space-y-5">
             <p class="text-grayishBlue text-3xl font-bold">01</p>
             <a href="#" class="text-xl font-extrabold hover:text-softRed"
               >Reviving Retro PCs</a
@@ -122,13 +150,13 @@
             </p>
           </div>
         </div>
-        <div class="flex gap-6">
+        <div class="flex gap-6 md:w-[45%]">
           <img
             class="w-1/3"
             src="images/image-top-laptops.jpg"
             alt="keys on keyboard"
           />
-          <div class="flex flex-col space-y-5">
+          <div class="flex flex-col justify-between space-y-5">
             <p class="text-grayishBlue text-3xl font-bold">02</p>
             <a href="#" class="text-xl font-extrabold hover:text-softRed"
               >Top 10 Laptops of 2022</a
@@ -138,13 +166,13 @@
             </p>
           </div>
         </div>
-        <div class="flex gap-6">
+        <div class="flex gap-6 md:w-[45%] md:mx-auto">
           <img
             class="w-1/3"
             src="images/image-gaming-growth.jpg"
             alt="tossed gamepad"
           />
-          <div class="flex flex-col space-y-5">
+          <div class="flex flex-col justify-between space-y-5">
             <p class="text-grayishBlue text-3xl font-bold">03</p>
             <a href="#" class="text-xl font-extrabold hover:text-softRed"
               >The Growth of Gaming</a

@@ -3,8 +3,15 @@ module.exports = {
   content: ["./index.html"],
   theme: {
     extend: {
-      container: {
-        center: true,
+      keyframes: {
+        navKeyframe: {
+          "0%": { transform: "translateY(-100%)" },
+          "100%": { transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        navAnimation: "navKeyframe .5s ease-in-out backwards",
+        spinOnce: "spin 0.5s linear",
       },
       colors: {
         SoftOrange: "hsl(35, 77%, 62%)",
